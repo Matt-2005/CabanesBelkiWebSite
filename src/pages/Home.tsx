@@ -2,17 +2,17 @@ import { Link } from 'react-router';
 import { Icon } from '../components/Icon';
 import { Counter, Img, Mosaic, ParallaxBg, QuoteSlider } from '../components/Media';
 import { Reveal } from '../components/Reveal';
-import { Hero, SectionHead } from '../components/Sections';
+import { HomeHero, SectionHead } from '../components/Sections';
 import { ContactSection } from '../components/ContactSection';
 import type { Photo } from '../data/photos';
 
 const APERCU: Photo[] = [
   { name: 'cabane-automne', alt: "Cabane en rondins dans les couleurs de l'automne", caption: "L'automne" },
   { name: 'poele-feu', alt: 'Le poêle à bois allumé dans la cabane', caption: 'Le feu de bois' },
-  { name: 'stalactites', alt: "Stalactites de glace sur le toit d'une cabane", caption: "L'hiver" },
-  { name: 'barbecue', alt: 'Barbecue au coin feu de la terrasse', caption: 'Le coin feu' },
-  { name: 'foret-coucher-soleil', alt: 'Coucher de soleil sur le lac Léman depuis la forêt', caption: 'Le Léman au couchant' },
-  { name: 'renard', alt: "Un renard près d'une cabane", caption: 'Le renard' },
+  { name: 'fenetre-givre', alt: 'La forêt enneigée vue à travers une fenêtre givrée', caption: 'Le givre' },
+  { name: 'barbecue-couchant', alt: 'Barbecue au coin feu face au coucher de soleil', caption: 'Le coin feu' },
+  { name: 'lever-soleil-neige', alt: 'Lever de soleil sur la neige et la mer de nuages', caption: 'Le matin' },
+  { name: 'cabanes-neige', alt: 'Cabanes sous la neige fraîche', caption: "L'hiver" },
 ];
 
 const QUOTES = [
@@ -22,9 +22,9 @@ const QUOTES = [
 ];
 
 const DISCOVER = [
-  { to: '/concept', photo: 'cabane-neige-sapins', alt: 'Cabane sous les sapins enneigés', title: 'Le concept', text: "Renouer avec nos rêves d'enfant : dormir dans une cabane, en pleine nature.", cta: 'Découvrir' },
-  { to: '/sejourner', photo: 'interieur-poele', alt: 'Intérieur chaleureux en rondins avec poêle à bois', title: 'Séjourner', text: 'Tarifs, équipements, accès et conditions : préparez votre venue.', cta: 'Tarifs & infos' },
-  { to: '/experience', photo: 'terrasse-soleil', alt: 'Terrasse en bois baignée de soleil', title: "L'expérience", text: 'Randonnées, détente, étoiles… et les mots de nos hôtes.', cta: 'Explorer' },
+  { to: '/concept', photo: 'sapins-neige', alt: 'Sapins enneigés baignés de soleil', title: 'Le concept', text: "Renouer avec nos rêves d'enfant : dormir dans une cabane, en pleine nature.", cta: 'Découvrir' },
+  { to: '/sejourner', photo: 'fenetre-foret', alt: 'La forêt vue depuis la fenêtre de la cabane', title: 'Séjourner', text: 'Tarifs, équipements, accès et conditions : préparez votre venue.', cta: 'Tarifs & infos' },
+  { to: '/experience', photo: 'terrasse-couchant', alt: 'La terrasse au coucher du soleil, face au Léman', title: "L'expérience", text: 'Randonnées, détente, étoiles… et les mots de nos hôtes.', cta: 'Explorer' },
 ];
 
 export default function Home() {
@@ -33,13 +33,9 @@ export default function Home() {
       <title>Cabanes Belki · Cabanes en pleine nature face au lac Léman</title>
       <meta name="description" content="Trois cabanes en rondins perchées à 1200 m d'altitude à Saxel (Haute-Savoie), face au lac Léman. Une nuit hors du temps, sans eau ni électricité, en pleine nature." />
 
-      <Hero
-        home
-        photo="cabane-nuit"
-        alt="Une cabane Belki illuminée sous un ciel étoilé"
-        title="“Tout art est une imitation de la nature”"
-        author="Sénèque"
-        sub="Trois cabanes en rondins perchées à 1200 m, face au lac Léman. Pas d'électricité, pas de réseau : juste le silence, le feu de bois et les étoiles."
+      <HomeHero
+        photos={['pleine-lune', 'cabane-neige', 'cabane-automne', 'lumieres-leman']}
+        alt="Pleine lune sur le lac Léman depuis les Cabanes Belki"
       />
 
       <section className="section section--cream">
@@ -55,8 +51,8 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal className="collage" variant="right">
-            <Reveal className="frame c1" variant="clip"><Img name="cabane-givre" alt="Cabane en rondins sous la neige et les stalactites" /></Reveal>
-            <Reveal className="frame c2" variant="clip" delay={200}><Img name="cabane-vue-lac" alt="Cabane avec vue sur le lac Léman" /></Reveal>
+            <Reveal className="frame c1" variant="clip"><Img name="cabane-neige-vue" alt="Cabane en rondins sous la neige, face à la vallée" /></Reveal>
+            <Reveal className="frame c2" variant="clip" delay={200}><Img name="interieur-chambre" alt="Le lit face à la grande baie vitrée" /></Reveal>
             <div className="collage__badge"><span><b>1200 m</b>d'altitude</span></div>
           </Reveal>
         </div>
@@ -103,7 +99,7 @@ export default function Home() {
       </section>
 
       <section className="section section--photo">
-        <ParallaxBg name="mer-de-nuages" />
+        <ParallaxBg name="ciel-etoile" />
         <div className="container">
           <SectionHead eyebrow="Livre d'or" title="Ce que disent nos hôtes" />
           <Reveal><QuoteSlider quotes={QUOTES} /></Reveal>
@@ -113,7 +109,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ContactSection title="Des questions ?" intro="Une envie de réserver, une question sur l'accès ou l'hiver ? Je vous réponds avec plaisir." />
+      <ContactSection bg="interieur-bois" title="Des questions ?" intro="Une envie de réserver, une question sur l'accès ou l'hiver ? Je vous réponds avec plaisir." />
     </>
   );
 }

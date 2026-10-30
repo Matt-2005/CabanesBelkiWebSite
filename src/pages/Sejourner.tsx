@@ -16,7 +16,7 @@ export default function Sejourner() {
       <title>Séjourner · Tarifs & infos pratiques · Cabanes Belki</title>
       <meta name="description" content="Tarifs fixes toute l'année (80 € la nuit), équipements, conditions de séjour et accès aux Cabanes Belki à Supersaxel, Saxel (74)." />
 
-      <Hero photo="cabane-automne" alt="Cabane en rondins à l'orée de la forêt" script="Séjourner dans nos cabanes" title="Tarifs, disponibilités et infos pratiques" />
+      <Hero photo="cabane-automne" alt="Cabane en rondins à l'automne" script="Séjourner dans nos cabanes" title="Tarifs, disponibilités et infos pratiques" />
 
       <section className="section section--cream" id="infos">
         <div className="container split-row">
@@ -46,7 +46,7 @@ export default function Sejourner() {
       </section>
 
       <section className="section section--photo" id="tarifs">
-        <ParallaxBg name="interieur-chauffage" />
+        <ParallaxBg name="interieur-chambre" />
         <div className="container">
           <SectionHead eyebrow="Tarifs" title="Tarifs">
             <p className="lead" style={{ color: 'rgba(255,255,255,.85)' }}>
@@ -90,12 +90,12 @@ export default function Sejourner() {
             </ul>
             <ReserveButton />
           </Reveal>
-          <Framed name="cabane-neige-sapins" alt="Cabane sous les sapins enneigés" />
+          <Framed name="cabanes-neige" alt="Cabanes sous la neige en hiver" />
         </div>
       </section>
 
       <section className="section section--photo" id="localisation">
-        <ParallaxBg name="cabanes-printemps" speed={0.1} />
+        <ParallaxBg name="foret-coucher-soleil" speed={0.1} />
         <div className="container">
           <SectionHead eyebrow="Accès" title="Localisation" />
           <div className="split-row split-row--wide-media" style={{ alignItems: 'start' }}>
@@ -130,7 +130,7 @@ export default function Sejourner() {
         </div>
       </section>
 
-      <ContactSection id="reserver" full title="Réservez votre nuit" intro="Indiquez-moi vos dates : je vous confirme la disponibilité au plus vite." bg="cabane-nuit" />
+      <ContactSection id="reserver" full title="Réservez votre nuit" intro="Indiquez-moi vos dates : je vous confirme la disponibilité au plus vite." bg="pleine-lune" />
     </>
   );
 }

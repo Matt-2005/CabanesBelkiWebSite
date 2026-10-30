@@ -1,16 +1,33 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { photo, type Photo } from '../data/photos';
+import { FOCUS, photoSource, type Photo } from '../data/photos';
 import { Icon, QuoteMark } from './Icon';
 import { useInView, prefersReducedMotion } from '../hooks/useInView';
 import { useLightbox } from './Lightbox';
 
-/* ---------- Image ---------- */
-export function Img({ name, alt, className, eager }: { name: string; alt: string; className?: string; eager?: boolean }) {
+/* ---------- Image ----------
+   `sizes` indique au navigateur la largeur affichée, pour qu'il charge la bonne version. */
+export function Img({
+  name,
+  alt,
+  className,
+  eager,
+  sizes = '(max-width: 960px) 100vw, 50vw',
+}: {
+  name: string;
+  alt: string;
+  className?: string;
+  eager?: boolean;
+  sizes?: string;
+}) {
+  const { src, srcSet } = photoSource(name);
   return (
     <img
-      src={photo(name)}
+      src={src}
+      srcSet={srcSet}
+      sizes={srcSet ? sizes : undefined}
       alt={alt}
       className={className}
+      style={FOCUS[name] ? { objectPosition: FOCUS[name] } : undefined}
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"
       {...(eager ? { fetchPriority: 'high' as const } : {})}
@@ -133,7 +150,7 @@ export function ParallaxBg({ name, speed = 0.12 }: { name: string; speed?: numbe
   }, [speed]);
   return (
     <div className="section__bg" ref={ref} aria-hidden="true">
-      <Img name={name} alt="" />
+      <Img name={name} alt="" sizes="100vw" />
     </div>
   );
 }
@@ -165,6 +182,7 @@ export function Tile({
   className = '',
   caption,
   delay = 0,
+  sizes = '(max-width: 640px) 100vw, (max-width: 960px) 50vw, 34vw',
 }: {
   item: Photo;
   group: Photo[];
@@ -172,6 +190,7 @@ export function Tile({
   className?: string;
   caption?: ReactNode;
   delay?: number;
+  sizes?: string;
 }) {
   const { open } = useLightbox();
   const [ref, inView] = useInView<HTMLElement>();
@@ -192,7 +211,7 @@ export function Tile({
         }
       }}
     >
-      <Img name={item.name} alt={item.alt} />
+      <Img name={item.name} alt={item.alt} sizes={sizes} />
       <span className="tile__zoom"><Icon name="zoom" /></span>
       {caption && <figcaption>{caption}</figcaption>}
     </figure>
@@ -204,7 +223,16 @@ export function Mosaic({ items, layout = [], style }: { items: Photo[]; layout?:
   return (
     <div className="mosaic" style={style}>
       {items.map((p, i) => (
-        <Tile key={p.name} item={p} group={items} index={i} className={layout[i] ?? ''} caption={p.caption} delay={(i % 2) * 120} />
+        <Tile
+          key={p.name}
+          item={p}
+          group={items}
+          index={i}
+          className={layout[i] ?? ''}
+          caption={p.caption}
+          delay={(i % 2) * 120}
+          sizes={layout[i]?.includes('wide') ? '(max-width: 640px) 100vw, 66vw' : undefined}
+        />
       ))}
     </div>
   );

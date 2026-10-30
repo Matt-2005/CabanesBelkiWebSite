@@ -10,14 +10,14 @@ export default function Contact() {
       <title>Contact & réservation · Cabanes Belki</title>
       <meta name="description" content="Réservez votre cabane ou posez vos questions : 06 10 50 52 05 · cabanebelki@gmail.com. Supersaxel, 74420 Saxel." />
 
-      <Hero photo="cabane-vue-lac" alt="Cabane en bois face au lac Léman" script="Je suis à votre écoute !" title="Contactez-moi" buttons={false} />
+      <Hero photo="cabane-vue-leman" alt="Cabane en rondins face au lac Léman" script="Je suis à votre écoute !" title="Contactez-moi" buttons={false} />
 
       <ContactSection
         id="formulaire"
         full
         title="Réservation & questions"
         intro="Pour réserver, indiquez vos dates et la durée souhaitée : je vous confirme la disponibilité et vous rappelle deux jours avant votre arrivée."
-        bg="cabane-nuit"
+        bg="interieur-chambre"
       />
 
       <section className="section section--light">

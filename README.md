@@ -23,14 +23,21 @@ npm run preview   # affiche le site final en local
 | Textes de chaque page | `src/pages/*.tsx` |
 | Couleurs, polices, mise en page | `src/styles/global.css` (variables en haut du fichier) |
 
-### Remplacer les photos
+### Photos
 
-Les photos actuelles ont été découpées dans la maquette. Leur résolution est donc limitée (environ 400 à 800 px de large).
-Pour un rendu net, **remplacez-les par les photos originales** en gardant le même nom de fichier dans `src/assets/img/`
-(ex. `cabane-nuit.jpg`). Rien d'autre à changer : Vite les détecte et les optimise tout seul.
-Une largeur de 2000 px environ suffit pour les grandes images de fond.
+Les photos du site sont dans `src/assets/img/`, en WebP, chacune en trois tailles :
+`nom.webp` (1920 px), `nom-md.webp` (1200 px) et `nom-sm.webp` (640 px).
+Le navigateur charge automatiquement la plus légère qui suffit à l'écran.
+Les originaux (HEIC, DNG…) sont rangés dans `photos-originales/`. Ce dossier n'est pas envoyé sur GitHub.
 
-Le logo est dans `public/logo.png` et l'icône d'onglet dans `public/favicon.png`.
+**Ajouter ou remplacer une photo :** déposez un fichier `.jpg` ou `.webp` dans `src/assets/img/`
+(environ 2000 px de large suffisent), puis utilisez son nom (sans extension) dans les pages ou dans `src/data/content.ts`.
+Une seule taille fonctionne aussi. Les trois tailles servent seulement à alléger le chargement.
+Si une photo est mal cadrée sur grand écran, ajustez son point d'intérêt dans `FOCUS` (`src/data/photos.ts`).
+
+Les photos des activités (Yvoire, Voirons, Mont Billiat, Évian) et le plan aérien sont encore les anciennes images, de basse résolution.
+
+Le logo est dans `public/logo.png`, l'icône d'onglet dans `public/favicon.png` et l'aperçu des réseaux sociaux dans `public/og-image.jpg`.
 
 ## Formulaire de contact
 

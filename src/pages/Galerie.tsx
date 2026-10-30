@@ -22,7 +22,7 @@ export default function Galerie() {
       <title>Galerie photo · Cabanes Belki</title>
       <meta name="description" content="Photos des Cabanes Belki au fil des saisons : cabanes en rondins, intérieurs chaleureux, lac Léman, neige et forêt." />
 
-      <Hero photo="cabane-hiver-ciel" alt="Cabane sous la neige et ciel bleu" script="Découvrez la beauté et la sérénité de nos cabanes en pleine nature" title="Images et souvenirs de nos hôtes" small />
+      <Hero photo="cabanes-neige" alt="Cabanes sous la neige" script="Découvrez la beauté et la sérénité de nos cabanes en pleine nature" title="Images et souvenirs de nos hôtes" />
 
       <section className="section section--wood">
         <div className="container">
@@ -43,7 +43,7 @@ export default function Galerie() {
         </div>
       </section>
 
-      <ContactSection title="Des questions ?" intro="Envie de découvrir ces paysages en vrai ? Écrivez-moi." bg="cabane-givre" />
+      <ContactSection title="Des questions ?" intro="Envie de découvrir ces paysages en vrai ? Écrivez-moi." bg="sapins-neige" />
     </>
   );
 }

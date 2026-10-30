@@ -14,9 +14,9 @@ import { SectionHead } from './Sections';
 const ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT as string | undefined;
 
 const SUBJECTS = [
-  { value: 'reservation', label: 'Je souhaite réserver une cabane', mail: 'Demande de réservation' },
-  { value: 'question', label: "J'ai une question", mail: "Demande d'information" },
-  { value: 'cadeau', label: 'Je souhaite offrir un séjour', mail: 'Séjour à offrir' },
+  { value: 'reservation', label: 'Réserver une cabane', mail: 'Demande de réservation' },
+  { value: 'question', label: 'Poser une question', mail: "Demande d'information" },
+  { value: 'cadeau', label: 'Offrir un séjour', mail: 'Séjour à offrir' },
 ];
 
 const LABELS: Record<string, string> = {

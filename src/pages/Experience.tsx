@@ -26,7 +26,7 @@ export default function Experience() {
       <title>L'expérience · Activités & avis · Cabanes Belki</title>
       <meta name="description" content="Randonnées au Mont Billiat et aux Voirons, Yvoire, Évian, détente, étoiles… et les avis de nos hôtes aux Cabanes Belki." />
 
-      <Hero photo="foret-coucher-soleil" alt="Coucher de soleil sur le lac Léman depuis la forêt" script="Vivez des expériences inoubliables" title="Découvrez les activités ainsi que les retours de nos hôtes" small />
+      <Hero photo="foret-coucher-soleil" alt="Coucher de soleil sur le lac Léman depuis la forêt" script="Vivez des expériences inoubliables" title="Découvrez les activités ainsi que les retours de nos hôtes" />
 
       <section className="section section--light">
         <div className="container">
@@ -56,10 +56,10 @@ export default function Experience() {
             <Slider
               className="slider--tall"
               items={[
-                { name: 'terrasse-soleil', alt: 'Terrasse en bois baignée de soleil' },
-                { name: 'barbecue', alt: 'Barbecue au coin feu' },
-                { name: 'terrasse-lac', alt: 'Deux chaises sur la terrasse face au lac' },
-                { name: 'cabane-nuit', alt: 'Cabane sous les étoiles' },
+                { name: 'barbecue-couchant', alt: 'Barbecue au coin feu face au coucher de soleil' },
+                { name: 'terrasse-couchant', alt: 'La terrasse au coucher du soleil' },
+                { name: 'ciel-etoile', alt: 'Ciel étoilé au-dessus de la forêt' },
+                { name: 'poele-feu', alt: 'Le poêle à bois allumé' },
               ]}
             />
           </Reveal>
@@ -79,7 +79,7 @@ export default function Experience() {
       </section>
 
       <section className="section section--photo" id="avis">
-        <ParallaxBg name="mer-de-nuages" speed={0.08} />
+        <ParallaxBg name="nuit-neige" speed={0.08} />
         <div className="container">
           <SectionHead eyebrow="Livre d'or" title="Ce que disent nos hôtes">
             <p className="lead" style={{ color: 'rgba(255,255,255,.8)' }}>Quelques mots laissés au moment du départ. Le renard, lui, n'a pas encore écrit.</p>
@@ -106,11 +106,11 @@ export default function Experience() {
           <Mosaic
             layout={['', '', '', 'tile--wide', '']}
             items={[
-              { name: 'cabanes-printemps', alt: 'Deux cabanes au printemps' },
-              { name: 'interieur-poele', alt: 'Intérieur avec poêle à bois' },
-              { name: 'interieur-chauffage', alt: 'Intérieur lumineux' },
-              { name: 'roue-charrette', alt: 'Roue de charrette face au panorama' },
-              { name: 'cabane-hiver-ciel', alt: 'Cabane sous la neige' },
+              { name: 'cabane-vue-leman', alt: 'Cabane en rondins face au Léman' },
+              { name: 'interieur-chambre', alt: 'Le lit face à la baie vitrée' },
+              { name: 'fenetre-foret', alt: 'La forêt vue depuis la fenêtre' },
+              { name: 'lever-soleil-neige', alt: 'Lever de soleil sur la neige' },
+              { name: 'cabane-neige', alt: 'Cabane sous la neige' },
             ]}
           />
           <Reveal as="p" className="center" style={{ marginTop: 44 }}>
@@ -119,7 +119,7 @@ export default function Experience() {
         </div>
       </section>
 
-      <ContactSection title="Une envie d'évasion ?" intro="Je vous conseille volontiers sur les balades et les meilleures saisons." bg="terrasse-foret" />
+      <ContactSection title="Une envie d'évasion ?" intro="Je vous conseille volontiers sur les balades et les meilleures saisons." bg="cabane-crepuscule" />
     </>
   );
 }

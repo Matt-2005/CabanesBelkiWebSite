@@ -10,11 +10,11 @@ export default function Concept() {
       <title>Le concept · Cabanes Belki</title>
       <meta name="description" content="Le concept des Cabanes Belki : trois cabanes autonomes en rondins sur l'ancienne station de Supersaxel, à 1200 m, pour se reconnecter à la nature." />
 
-      <Hero photo="cabane-prairie" alt="Cabane sur pilotis dans la prairie au printemps" script="Découvrez notre concept de cabanes en pleine nature" title="L'expérience unique des Cabanes Belki" />
+      <Hero photo="cabane-neige-vue" alt="Cabane en rondins sous la neige, face à la vallée" script="Découvrez notre concept de cabanes en pleine nature" title="L'expérience unique des Cabanes Belki" />
 
       <section className="section section--cream">
         <div className="container split-row">
-          <Framed name="cabane-neige-sapins" alt="Cabane nichée sous les sapins enneigés" />
+          <Framed name="cabane-crepuscule" alt="Une cabane au crépuscule, au cœur de la forêt" />
           <Reveal className="split-row__text" variant="right">
             <span className="eyebrow">L'idée</span>
             <h2 className="script">Le Concept</h2>
@@ -27,7 +27,7 @@ export default function Concept() {
       </section>
 
       <section className="section section--photo">
-        <ParallaxBg name="interieur-poele" />
+        <ParallaxBg name="lumieres-leman" />
         <div className="container">
           <SectionHead eyebrow="Le lieu" title="Les Cabanes Belki">
             <p className="lead" style={{ color: 'rgba(255,255,255,.85)' }}>
@@ -38,11 +38,10 @@ export default function Concept() {
             <Slider
               className="slider--wide"
               items={[
-                { name: 'cabane-prairie', alt: 'Cabane sur pilotis au printemps' },
                 { name: 'cabane-automne', alt: "Cabane en rondins à l'automne" },
-                { name: 'cabane-givre', alt: 'Cabane sous la neige' },
-                { name: 'cabane-hiver-ciel', alt: "Cabane sous un ciel bleu d'hiver" },
-                { name: 'cabane-neige-fumee', alt: 'Cabane enneigée, la cheminée fume' },
+                { name: 'cabane-neige', alt: 'Cabane sous la neige, au soleil' },
+                { name: 'cabane-vue-leman', alt: 'Façade en rondins face au Léman' },
+                { name: 'cabanes-neige', alt: 'Cabanes dans la neige fraîche' },
               ]}
             />
           </Reveal>
@@ -56,10 +55,10 @@ export default function Concept() {
             <Slider
               className="slider--tall"
               items={[
-                { name: 'cabane-nuit', alt: 'Cabane illuminée la nuit' },
-                { name: 'interieur-poele', alt: 'Intérieur avec poêle à bois et banquettes' },
-                { name: 'interieur-chauffage', alt: 'Intérieur lumineux en rondins' },
-                { name: 'rondins-soleil', alt: 'Façade en rondins au soleil couchant' },
+                { name: 'interieur-chambre', alt: 'Le lit face à la grande baie vitrée' },
+                { name: 'poele-feu', alt: 'Le poêle à bois allumé' },
+                { name: 'fenetre-givre', alt: 'Vue sur la forêt enneigée depuis la fenêtre' },
+                { name: 'interieur-bois', alt: 'Intérieur en bois de la cabane' },
               ]}
             />
           </Reveal>
@@ -75,7 +74,7 @@ export default function Concept() {
       </section>
 
       <section className="section section--photo">
-        <ParallaxBg name="foret-coucher-soleil" />
+        <ParallaxBg name="crepuscule-montagne" />
         <div className="container split-row">
           <Reveal className="split-row__text on-dark" variant="left">
             <span className="eyebrow">Notre engagement</span>
@@ -94,10 +93,10 @@ export default function Concept() {
             style={{ gridAutoRows: 'clamp(120px, 13vw, 180px)' }}
             layout={['tile--wide', 'tile--tall', '', '']}
             items={[
-              { name: 'roue-charrette', alt: 'Vieille roue de charrette face au panorama' },
-              { name: 'cloche-foret', alt: "Cloche suspendue à une cabane, forêt de bouleaux" },
-              { name: 'renard', alt: "Renard près d'une cabane" },
-              { name: 'cabanes-hiver', alt: 'Deux cabanes dans la neige' },
+              { name: 'sentier-neige', alt: 'Sentier dans la neige fraîche' },
+              { name: 'cabane-vue-leman', alt: 'Cabane en rondins face au panorama' },
+              { name: 'sapins-neige', alt: 'Sapins enneigés au soleil' },
+              { name: 'cabanes-neige', alt: 'Cabanes sous la neige' },
             ]}
           />
         </div>
@@ -107,11 +106,12 @@ export default function Concept() {
         <div className="container split-row">
           <Reveal className="frame-deco" variant="left">
             <Slider
+              className="slider--tall"
               items={[
-                { name: 'mer-de-nuages', alt: 'Mer de nuages au lever du soleil' },
-                { name: 'vue-lac-arbre', alt: 'Vue sur le lac Léman entre les arbres' },
-                { name: 'foret-lumiere', alt: 'Rayons de soleil dans la forêt' },
-                { name: 'ciel-lac', alt: 'Ciel nuageux sur le Léman' },
+                { name: 'pleine-lune', alt: 'Pleine lune sur le Léman' },
+                { name: 'foret-coucher-soleil', alt: 'Coucher de soleil sur le lac depuis la forêt' },
+                { name: 'lever-soleil-neige', alt: 'Lever de soleil sur la neige' },
+                { name: 'nuit-neige', alt: "Nuit d'hiver et lumières de la vallée" },
               ]}
             />
           </Reveal>
@@ -125,7 +125,7 @@ export default function Concept() {
         </div>
       </section>
 
-      <ContactSection title="Envie de vous reconnecter avec la nature ?" intro="Écrivez-moi pour vérifier les disponibilités ou poser vos questions." bg="interieur-chauffage" />
+      <ContactSection title="Envie de vous reconnecter avec la nature ?" intro="Écrivez-moi pour vérifier les disponibilités ou poser vos questions." bg="poele-feu" />
     </>
   );
 }
